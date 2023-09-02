@@ -1,9 +1,19 @@
-import React from 'react';
+"use client"
+import React, { useEffect, useRef } from 'react';
 
 const Header = () => {
+    const header = useRef()
+    useEffect(()=>{
+        const obv = new IntersectionObserver(h=>{
+            if(h[0].isIntersecting){
+                header.current.classList.add('active')
+            }
+        })
+        obv.observe(header.current)
+    },[])
     return (
         <div className=' w-[100vw] h-[85vh] mt-[50px] flex items-center justify-between px-[70px] bg-100 mb-[50px]'>
-            <div className=' w-1/2 h-auto flex flex-col items-start'>
+            <div className=' w-1/2 h-auto flex flex-col items-start' id='header' ref={header}>
                 <h4 className=' text-white text-[25px] mb-8'>Welcome to BD screen</h4>
                 <p className=' text-white text-[38px] text-start font-semibold mb-8'>
                     Download Unlimited Movies,Drama,Music Video and More Content.

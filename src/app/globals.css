@@ -30,3 +30,30 @@ body{
 ::-webkit-scrollbar{
     display: none;
 }
+#header{
+    transition: 1s ease;
+    transform: translateY(100px);
+    opacity: 0;
+}
+#header.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+#live{
+    transition: 1s ease;
+    transform: scale(0);
+    opacity: 0;
+}
+#live.active{
+    transform: scale(1);
+    opacity: 1;
+}
+#most{
+    transition: 1s ease;
+    transform: scale(0);
+    opacity: 0;
+}
+#most.active{
+    transform: scale(1);
+    opacity: 1;
+}
